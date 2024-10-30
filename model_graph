@@ -1,0 +1,143 @@
+digraph "Graph" {
+	graph [nodesep=1 ranksep=2 splines=false]
+	edge [arrowhead=none color="#707070"]
+	subgraph cluster_input {
+		color=white
+		1 [label="Rescaling
+shape= 180" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	1 -> 2
+	subgraph cluster_1 {
+		color=white
+		2 [label="Rescaling Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	conv_3 -> 3
+	2 -> conv_3
+	subgraph cluster_2 {
+		color="#5faad0" style=filled
+		conv_3 [label="Conv2D Layer
+Kernel Size: (3, 3)
+Filters: 32
+Activation: None" fontcolor=black shape=square]
+		3 [label="32
+Feature Maps" fontcolor=black shape=square]
+	}
+	3 -> 4
+	subgraph cluster_3 {
+		color=white
+		4 [label="MaxPooling2D
+Pool Size: (2, 2)" fillcolor="#8e44ad" fontcolor=white shape=invtrapezium style=filled]
+	}
+	conv_5 -> 5
+	4 -> conv_5
+	subgraph cluster_4 {
+		color="#5faad0" style=filled
+		conv_5 [label="Conv2D Layer
+Kernel Size: (3, 3)
+Filters: 64
+Activation: None" fontcolor=black shape=square]
+		5 [label="64
+Feature Maps" fontcolor=black shape=square]
+	}
+	5 -> 6
+	subgraph cluster_5 {
+		color=white
+		6 [label="MaxPooling2D
+Pool Size: (2, 2)" fillcolor="#8e44ad" fontcolor=white shape=invtrapezium style=filled]
+	}
+	conv_7 -> 7
+	6 -> conv_7
+	subgraph cluster_6 {
+		color="#5faad0" style=filled
+		conv_7 [label="Conv2D Layer
+Kernel Size: (3, 3)
+Filters: 128
+Activation: None" fontcolor=black shape=square]
+		7 [label="128
+Feature Maps" fontcolor=black shape=square]
+	}
+	7 -> 8
+	subgraph cluster_7 {
+		color=white
+		8 [label="MaxPooling2D
+Pool Size: (2, 2)" fillcolor="#8e44ad" fontcolor=white shape=invtrapezium style=filled]
+	}
+	8 -> 9
+	subgraph cluster_8 {
+		color=white
+		9 [label="Dropout
+Rate: 0.5" fillcolor="#f39c12" fontcolor=black shape=Mcircle style=filled]
+	}
+	9 -> 10
+	subgraph cluster_9 {
+		color=white
+		10 [label=Flattening fillcolor="#2c3e50" fontcolor=white shape=triangle style=filled]
+	}
+	10 -> 11
+	10 -> 12
+	10 -> 13
+	10 -> 14
+	10 -> 15
+	10 -> 16
+	10 -> 17
+	10 -> 18
+	10 -> 19
+	10 -> 20
+	subgraph cluster_10 {
+		color=white
+		rank=same
+		101010 [label="Units: 128 (+118 more)
+Activation: relu" color=white fontcolor=black fontsize=18 shape=rectangle]
+		11 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		12 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		13 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		14 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		15 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		16 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		17 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		18 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		19 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		20 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+	}
+	11 -> 21
+	12 -> 21
+	13 -> 21
+	14 -> 21
+	15 -> 21
+	16 -> 21
+	17 -> 21
+	18 -> 21
+	19 -> 21
+	20 -> 21
+	subgraph cluster_11 {
+		color=white
+		21 [label="Dropout
+Rate: 0.25" fillcolor="#f39c12" fontcolor=black shape=Mcircle style=filled]
+	}
+	21 -> 22
+	21 -> 23
+	21 -> 24
+	21 -> 25
+	21 -> 26
+	21 -> 27
+	21 -> 28
+	21 -> 29
+	21 -> 30
+	subgraph cluster_output {
+		212121 [label="Output Units: 9
+Activation: softmax" color=white fontcolor=black fontsize=18 shape=rectangle]
+		color=white
+		rank=same
+		labeljust=1
+		22 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		23 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		24 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		25 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		26 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		27 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		28 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		29 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		30 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+	}
+	arrowShape=none
+}
